@@ -42,24 +42,6 @@ var id = 0;
 
     });
 
-        $('#calendar').fullCalendar({
-      header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'month,agendaWeek,agendaDay'
-      },
-      defaultDate: '2016-01-12',
-      editable: true,
-      droppable: true, // this allows things to be dropped onto the calendar
-      drop: function() {
-        // is the "remove after drop" checkbox checked?
-        if ($('#drop-remove').is(':checked')) {
-          // if so, remove the element from the "Draggable Events" list
-          $(this).remove();
-        }
-      }
-    });
-
 
 
        
@@ -85,7 +67,9 @@ var id = 0;
                        title: title,
                        start: start,
                        end: end,
-                       id : id
+                       id : id,
+                       imageurl:'https://files.slack.com/files-pri/T0LENL1T8-F0M95SL8Y/dinoicon1.png'
+
                    };
 
                    $('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
@@ -93,6 +77,14 @@ var id = 0;
                $('#calendar').fullCalendar('unselect');
                
                       
+           },
+
+
+           eventRender: function(event, eventElement) {
+
+                      if (event.imageurl) {
+                           eventElement.find("div.fc-content").prepend("<img src='" + event.imageurl +"' width='20' height='20'>");
+                   }
            },
 
            eventClick: function (event) {
@@ -114,6 +106,15 @@ var id = 0;
 
            editable: true,
            eventLimit: true, // allow "more" link when too many events
+                 editable: true,
+      droppable: true, // this allows things to be dropped onto the calendar
+      drop: function() {
+        // is the "remove after drop" checkbox checked?
+        if ($('#drop-remove').is(':checked')) {
+          // if so, remove the element from the "Draggable Events" list
+          $(this).remove();
+        }
+      }
        });
 
 
@@ -241,7 +242,7 @@ var id = 0;
     </div>
 
 <script>
-swal({   title: "Welcome, are you ready to get stuff done? -Kalen",   text: "Here's a custom image.",   imageUrl: "images/thumbs-up.jpg" });
+swal({   title: "Welcome! Are you ready to get stuff done? -Kalen",    imageUrl: "https://files.slack.com/files-pri/T0LENL1T8-F0M9F0PPV/dinoneutralface1.png" });
 </script>
 
 
