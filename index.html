@@ -13,8 +13,12 @@
 <script src='http://www.justinleesf.com/calendar/moment.min.js'></script>
 
 <script src='http://www.justinleesf.com/calendar/fullcalendar.min.js'></script>
+<script src="dist/sweetalert.min.js"></script> <link rel="stylesheet" type="text/css" href="dist/sweetalert.css">
 
 <script>
+
+
+
 var id = 0;
    $(document).ready(function() {
 
@@ -113,6 +117,8 @@ var id = 0;
        });
 
 
+
+
        
    });
 
@@ -120,7 +126,7 @@ var id = 0;
 <style>
 
   body {
-    margin-top: 40px;
+    margin-top: -10px;
     text-align: center;
     font-size: 14px;
     font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
@@ -128,7 +134,9 @@ var id = 0;
     
   #wrap {
     width: 1100px;
-    margin: 0 auto;
+    margin: 2 auto;
+
+
   }
     
   #external-events {
@@ -167,31 +175,78 @@ var id = 0;
     width: 900px;
   }
 
+  canvas {
+  background: 
+    linear-gradient(
+      hsl(200, 50%, 80%) 0%, 
+      hsl(200, 30%, 95%) 75%)
+  ;
+  display: block;
+}
+
+  #mountain {
+  background: url(http://jackrugile.com/images/misc/skyline-texture.png);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+
+
+
 
 </style>
 
         <title>Hello World</title>
     </head>
     <body>
+
+      <img src="https://files.slack.com/files-pri/T0LENL1T8-F0M9C64P6/kalen.png" alt="Smiley face" height="200" width="500">
+
+
          <div id='wrap'>
 
     <div id='external-events'>
-      <h4>Draggable Events</h4>
-      <div class='fc-event'>My Event 1</div>
-      <div class='fc-event'>My Event 2</div>
-      <div class='fc-event'>My Event 3</div>
-      <div class='fc-event'>My Event 4</div>
-      <div class='fc-event'>My Event 5</div>
+      <h4>Homework</h4>
+      <div class='fc-event'>Read Frankenstein </div>
+      <div class='fc-event'>Chinese Homework</div>
+      <div class='fc-event'>12 Page essay on particle physics</div>
+      <div class='fc-event'>Find the cure for cancer</div>
+      <div class='fc-event'>Discover a new cell</div>
+      <p>
+        <input type='checkbox' id='drop-remove' />
+        <label for='drop-remove'>remove after drop</label>
+      </p>
+    </div>
+    <div id='calendar'></div>
+
+             <div id='wrap'>
+
+    <div  id='external-events'>
+      <h4>Homework</h4>
+      <div class='fc-event'>Read Frankenstein </div>
+      <div class='fc-event'>Chinese Homework</div>
+      <div class='fc-event'>12 Page essay on particle physics</div>
+      <div class='fc-event'>Find the cure for cancer</div>
+      <div class='fc-event'>Discover a new cell</div>
+        <div class='fc-event'>Discover a new cell</div>
+          <div class='fc-event'>Discover a new cell</div>
+            <div class='fc-event'>Discover a new cell</div>
       <p>
         <input type='checkbox' id='drop-remove' />
         <label for='drop-remove'>remove after drop</label>
       </p>
     </div>
 
-    <div id='calendar'></div>
+<script>
+swal({   title: "Welcome, are you ready to get stuff done? -Kalen",   text: "Here's a custom image.",   imageUrl: "images/thumbs-up.jpg" });
+</script>
 
+
+    
     <div style='clear:both'></div>
 
-  </div>
     </body>
 </html>
